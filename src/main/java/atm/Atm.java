@@ -23,7 +23,7 @@ public class Atm {
         int thousands = 0, fiveHundreds = 0, oneHundreds = 0, fifties = 0, tens = 0, fives = 0, ones = 0;
         if (oneThousand > 0) {
             thousands = min(oneThousand, amount / 1000);
-            oneThousand = oneThousand - thousands;
+            oneThousand -= thousands;
             amount = amount - 1000 * thousands;
             if (amount == 0) return new Money(thousands, fiveHundreds, oneHundreds, fifties, tens, fives, ones);
         }
@@ -64,6 +64,13 @@ public class Atm {
             if (amount == 0) return new Money(thousands, fiveHundreds, oneHundreds, fifties, tens, fives, ones);
         }
         System.out.println("Unable to get the specified amount");
+        oneThousand += thousands;
+        fiveHundred += fiveHundreds;
+        oneHundred += oneHundreds;
+        fifty += fifties;
+        ten += tens;
+        five += fives;
+        one += ones;
         return null;
     }
 
