@@ -31,9 +31,6 @@ public class AtmTest {
         atm.setFive(5);
         atm.setOne(10);
         this.money = new Money(1, 1, 1, 0, 1, 0, 3);
-
-        SortedMap<Integer, Integer> d = new TreeMap<>(Collections.reverseOrder());
-        d.compute(1, (integer, integer2) -> integer*integer2);
     }
 
     @Test
