@@ -1,4 +1,4 @@
-package atm;
+package atm_mememto_iterator;
 
 /**
  * Created by bender on 20.05.2018.

@@ -1,12 +1,15 @@
-package atm;
+package atm_mememto_iterator;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
-public class Atm {
+import static atm_mememto_iterator.Banknotes.*;
+import static java.util.Comparator.reverseOrder;
+
+public class Atm implements AtmCollection{
     private Map<Banknotes, Integer> state;
+
+    public Atm() {
+    }
 
     public Atm(Map<Banknotes, Integer> state) {
         this.state = state;
@@ -25,7 +28,7 @@ public class Atm {
             System.out.println("Invalid request!");
             return null;
         }
-        TreeMap<Banknotes, Integer> result = new TreeMap<>(Comparator.reverseOrder());
+        TreeMap<Banknotes, Integer> result = new TreeMap<>(reverseOrder());
         Iterator<Banknotes> iterator = state.keySet().iterator();
         while (iterator.hasNext() && amount > 0) {
             Banknotes banknote = iterator.next();
@@ -48,5 +51,33 @@ public class Atm {
            return null;
         }
         return result;
+    }
+    public State save(){
+        Map<Banknotes, Integer> state = new TreeMap<>(reverseOrder());
+        state.put(ONE, 10);
+        state.put(FIVE, 10);
+        state.put(TEN, 10);
+        state.put(FIFTY, 10);
+        state.put(ONE_HUNDRED, 10);
+        state.put(FIVE_HUNDREDS, 5);
+        state.put(ONE_THOUSAND, 2);
+        return new State(state);
+    }
+
+    public void load(State state){
+        this.state = state.getState();
+    }
+
+    public Map<Banknotes, Integer> getState() {
+        return state;
+    }
+
+    public void setState(Map<Banknotes, Integer> state) {
+        this.state = state;
+    }
+
+    @Override
+    public AtmIterator iterator() {
+        return null;
     }
 }
