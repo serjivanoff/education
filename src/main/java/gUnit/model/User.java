@@ -1,4 +1,4 @@
-package model;
+package gUnit.model;
 
 /**
  * Created by bender on 27.04.2018.

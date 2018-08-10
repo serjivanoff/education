@@ -1,4 +1,4 @@
-import model.User;
+import gUnit.model.User;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -3,8 +3,7 @@ package gUnit;
 import annotations.After;
 import annotations.Before;
 import annotations.Test;
-import model.User;
-import org.junit.Assert;
+import gUnit.model.User;
 
 public class GUnitUserTest {
     private User defaultUser;
