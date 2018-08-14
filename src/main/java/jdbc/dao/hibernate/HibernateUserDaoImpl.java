@@ -33,7 +33,7 @@ public class HibernateUserDaoImpl implements UserDAO {
         Transaction transaction = session.beginTransaction();
         long id = ((long) session.save(user));
         System.out.println(id);
-        user.getPhones().forEach(session::save);
+//        user.getPhones().forEach(session::save);
         session.flush();
         transaction.commit();
         session.close();

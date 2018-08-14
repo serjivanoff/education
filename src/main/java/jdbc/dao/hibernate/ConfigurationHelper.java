@@ -18,7 +18,7 @@ public class ConfigurationHelper {
         configuration.setProperty("hibernate.connection.username", "bender");
         configuration.setProperty("hibernate.connection.password", "bender");
         configuration.setProperty("hibernate.show_sql", "true");
-        configuration.setProperty("hibernate.hbm2ddl.auto", "validate");
+        configuration.setProperty("hibernate.hbm2ddl.auto", "create");
         configuration.addAnnotatedClass(AddressDataSet.class);
         configuration.addAnnotatedClass(PhoneDataSet.class);
         configuration.addAnnotatedClass(UserDataSet.class);
