@@ -10,22 +10,11 @@
     <a href="login">Login</a> <a href="details">CacheDetails</a>
 </div>
 <div class="login">
-    <form action="/login" method="post">
+    <form action="/otus/login" method="post">
         login:<input type = "text" name="login"><br>
         password:<input type = "password" name="password">
         <input type = "submit" value="submit">
     </form>
 </div>
-<div id = "ServerTime"></div>
-<script>
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if(this.readyState == 4 && this.status == 200) {
-            document.getElementById('ServerTime').innerHTML = JSON.parse(this.responseText).time;
-        }
-    };
-    xhttp.open("GET", "server-time",true);
-    xhttp.send();
-</script>
 </body>
 </html>
