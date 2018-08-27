@@ -82,8 +82,6 @@ public class UserDataSet extends DataSet {
 
     @Override
     public int hashCode() {
-        int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + age;
-        return result;
+        return getId()==null?0:Long.hashCode(getId());
     }
 }
